@@ -15,7 +15,7 @@ public class HelloWorldController {
 	private JdbcTemplate jdbcTemplate;
 	
 	@Autowired
-    public void setDataSource(@Qualifier("orclDataSource") DataSource orclDataSource) {
+    public void setJdbcTemplate(@Qualifier("orclDataSource") DataSource orclDataSource) {
         this.jdbcTemplate = new JdbcTemplate(orclDataSource);
     }
 	
