@@ -41,7 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		/*
 		 * The .logout() will add a spring security logout support that will be exposed
-		 * at default url- "context-root(application root path)/logout". So to logout from app we need send data(or hit) to this default url on click of logout button 
+		 * at default url- "context-root(application root path)/logout". So to logout from app(and redirect to loginPage), we need send data(or hit) to this default url on click of logout button 
 		 */
 	}
 }
