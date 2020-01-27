@@ -30,8 +30,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		
-		http.authorizeRequests().anyRequest().authenticated().and().formLogin()
-				.loginPage("/graduateApplicationLogin").loginProcessingUrl("/authenticateTheUser").permitAll();
+		http.authorizeRequests().anyRequest().authenticated()
+		.and()
+		.formLogin()
+			.loginPage("/graduateApplicationLogin")
+			.loginProcessingUrl("/authenticateTheUser")
+			.permitAll()
+		.and()
+		.logout().permitAll();
+		
+		/*
+		 * The .logout() will add a spring security logout support that will be exposed
+		 * at default url- "context-root(application root path)/logout". So to logout from app we need send data(or hit) to this default url on click of logout button 
+		 */
 	}
-
 }
