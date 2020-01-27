@@ -70,11 +70,18 @@
 			<artifactId>jstl</artifactId>
 		</dependency>
 
-		<!-- Tomcat embedded container (spring-boot-starter-web already includes tomcat but still)-->
+		<!-- Tomcat embedded container (spring-boot-starter-web already includes 
+			tomcat but still) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-taglibs -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
 		</dependency>
 	</dependencies>
 
