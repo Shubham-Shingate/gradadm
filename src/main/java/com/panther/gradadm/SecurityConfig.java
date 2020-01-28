@@ -20,7 +20,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		// Add in memory users, passwords and roles
 		auth.inMemoryAuthentication().withUser(users.username("Shubham").password("Shubham@2234").roles("STUDENT"));
 		auth.inMemoryAuthentication().withUser(users.username("Vaibhavi").password("Vaibhavi@2234").roles("STUDENT"));
-		auth.inMemoryAuthentication().withUser(users.username("Chintu").password("Chintu@2234").roles("ADMIN"));
+		auth.inMemoryAuthentication().withUser(users.username("Chintu").password("Chintu@2234").roles("ADMIN","STUDENT"));
 	}
 
 	/*
@@ -30,14 +30,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		
-		http.authorizeRequests().anyRequest().authenticated()
-		.and()
-		.formLogin()
+		http.authorizeRequests()
+		 .antMatchers("/").permitAll()  // allow public access to home page
+         .antMatchers("/students").hasRole("STUDENT")
+         .antMatchers("/admins/**").hasRole("ADMIN")
+		 .and()
+			.formLogin()
 			.loginPage("/graduateApplicationLogin")
 			.loginProcessingUrl("/authenticateTheUser")
 			.permitAll()
-		.and()
-		.logout().permitAll();
+		 .and()
+		 .logout()
+		 .logoutSuccessUrl("/")
+		 .permitAll();
 		
 		/*
 		 * The .logout() will add a spring security logout support that will be exposed

@@ -8,10 +8,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 //@RequestMapping("/")
 public class LoginController {
-
-	@RequestMapping("/")
-	public String showDashBoard() {
-		return "dashBoard";
+	
+	@GetMapping("/")
+    public String showLandingPage() {
+        return "landingPage";
+    }
+	
+	@GetMapping("/students")
+	public String showStudentDashBoard() {
+		return "studentDashBoard";
+	}
+	
+	@GetMapping("/admins")
+	public String showAdminDashBoard() {
+		return "adminDashBoard";
 	}
 	
 	@GetMapping("/graduateApplicationLogin")

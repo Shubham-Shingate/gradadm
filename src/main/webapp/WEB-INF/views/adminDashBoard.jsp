@@ -3,7 +3,7 @@
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <html>
 	<head>
-		<title>GradApplicationDashboard</title>
+		<title>GradAdmAdmintDashboard</title>
 	</head>
 	<body>
 		<p>
@@ -12,7 +12,7 @@
 		<p>
 			ROLE- <security:authentication property="principal.authorities" />
 		</p>	
-		<h3>The User Dashboard</h3>
+		<h3>The Admin Dashboard</h3>
 		
 		<form:form action="${pageContext.request.contextPath}/logout"
 			   method="POST">	

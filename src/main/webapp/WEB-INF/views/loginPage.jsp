@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 	<head>
-		<title>GradApplicationLoginPage</title>
+		<title>GradAdmLoginPage</title>
 		<style>
 		.failed {
 			color: red;
