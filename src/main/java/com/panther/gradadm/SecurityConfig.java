@@ -32,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		http.authorizeRequests()
 		 .antMatchers("/").permitAll()  // allow public access to home page
-         .antMatchers("/students").hasRole("STUDENT")
+         .antMatchers("/students/**").hasRole("STUDENT")
          .antMatchers("/admins/**").hasRole("ADMIN")
 		 .and()
 			.formLogin()

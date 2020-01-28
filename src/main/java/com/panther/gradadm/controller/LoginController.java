@@ -24,6 +24,11 @@ public class LoginController {
 		return "adminDashBoard";
 	}
 	
+//	@GetMapping("/admins/add")
+//	public String addAdmin() {
+//		return "adminDashBoard";
+//	}
+	
 	@GetMapping("/graduateApplicationLogin")
 	public String showGradApplicationLoginPage() {
 		System.out.println("Show login url was hit");
