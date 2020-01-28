@@ -15,7 +15,7 @@
 		</style>
 	</head>
 	<body>
-		<h3>My Custom Login Page</h3>
+		<h3>Graduate Application Login Page</h3>
 		<form:form action="${pageContext.request.contextPath}/authenticateTheUser"
 			   method="POST">
 			<!-- Check for login error -->
