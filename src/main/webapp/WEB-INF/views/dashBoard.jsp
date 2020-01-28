@@ -13,9 +13,9 @@
 			ROLE- <security:authentication property="principal.authorities" />
 		</p>	
 		<h3>The User Dashboard</h3>
+		
 		<form:form action="${pageContext.request.contextPath}/logout"
-			   method="POST">
-			
+			   method="POST">	
 				<input type="submit" value="Logout" />
 		</form:form>
 	</body>
