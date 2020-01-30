@@ -11,6 +11,11 @@ public class LoginController {
     public String showLandingPage() {
         return "landingPage";
     }
+
+	@GetMapping("/signup")
+    public String showSignUpPage() {
+        return "gradApplicationSignup";
+    }
 	
 	@GetMapping("/students")
 	public String showStudentDashBoard() {
@@ -30,6 +35,6 @@ public class LoginController {
 	@GetMapping("/graduateApplicationLogin")
 	public String showGradApplicationLogin() {
 		System.out.println("Show login url was hit");
-		return "gradApplicationLogin";
+		return "gradApplicationLoginNew";
 	}
 }

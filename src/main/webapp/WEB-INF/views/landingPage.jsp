@@ -21,6 +21,11 @@
       <p>
       	<a href="${pageContext.request.contextPath}/admins">Admin Login (requires login)</a>
       </p>
+      
+      <p>
+      	New User?
+      	<a href="${pageContext.request.contextPath}/signup">Sign up here</a>
+      </p>
 	</body>
 </html>
 
