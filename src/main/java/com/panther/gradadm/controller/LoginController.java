@@ -35,6 +35,6 @@ public class LoginController {
 	@GetMapping("/graduateApplicationLogin")
 	public String showGradApplicationLogin() {
 		System.out.println("Show login url was hit");
-		return "gradApplicationLoginNew";
+		return "gradApplicationLogin";
 	}
 }
