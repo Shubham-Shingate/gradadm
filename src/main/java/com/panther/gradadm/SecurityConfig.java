@@ -31,7 +31,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		
 		http.authorizeRequests()
-		 .antMatchers("/").permitAll()  // allow public access to home page
+		 .antMatchers("/").permitAll() // allow public access to landing page
+		 .antMatchers("/signup").permitAll() // allow public access to signup page
          .antMatchers("/students/**").hasRole("STUDENT")
          .antMatchers("/admins/**").hasRole("ADMIN")
 		 .and()
@@ -40,9 +41,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.loginProcessingUrl("/authenticateTheUser")
 			.permitAll()
 		 .and()
-		 .logout()
-		 .logoutSuccessUrl("/")
-		 .permitAll();
+		 	.logout()
+		 	.logoutSuccessUrl("/")
+		 	.permitAll()
+		 .and()
+		 	.exceptionHandling()
+		 	.accessDeniedPage("/accessDenied");
+		
 		
 		/*
 		 * The .logout() will add a spring security logout support that will be exposed

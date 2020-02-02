@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>GradAdmLoginPage</title>
+	<title>GradAdmSignUpPage</title>
 	<meta charset="ISO-8859-1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -33,6 +33,9 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/img-01.jpg');">
 			<div class="wrap-login100 p-t-190 p-b-30">
+				
+				<!-- Likewise of hitting /authenticateTheUser in case of login, here we are hitting a new url 
+				/registerTheUser make sure that you use the same endpoint url in backend code too. -->
 				<form:form action="${pageContext.request.contextPath}/registerTheUser"
 			   method="POST" class="login100-form validate-form">
 					<div class="login100-form-avatar">
@@ -40,17 +43,17 @@
 					</div>
 
 					<span class="login100-form-title p-t-20 p-b-45">
-						Graduate Admissions
+						Graduate Admissions Signup
 					</span>
 					
-					<!-- Check for login error -->
+					<%-- <!-- Check for login error -->
 					<c:if test="${param.error != null}">
 						<i class="failed">Sorry! You entered invalid username/password.</i>
 					</c:if>
 					<!-- Check for logout done just now -->
 					<c:if test="${param.logout != null}">
 						<i class="failed">You have been logged out</i>
-					</c:if>
+					</c:if> --%>
 
 					<div class="wrap-input100 validate-input m-b-10" data-validate = "Username is required">
 						<input class="input100" type="text" name="username" placeholder="Username">
@@ -70,7 +73,7 @@
 
 					<div class="container-login100-form-btn p-t-10">
 						<button type="submit" class="login100-form-btn">
-							Login
+							Signup
 						</button>
 						<!-- <input type="submit" value="Login" /> -->
 					</div>

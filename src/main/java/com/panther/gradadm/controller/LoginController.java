@@ -28,13 +28,18 @@ public class LoginController {
 	}
 	
 //	@GetMapping("/admins/add")
-//	public String addAdmin() {
+//		public String addAdmin() {
 //		return "adminDashBoard";
 //	}
 	
 	@GetMapping("/graduateApplicationLogin")
-	public String showGradApplicationLogin() {
+	public String showGradApplicationLoginPage() {
 		System.out.println("Show login url was hit");
 		return "gradApplicationLogin";
 	}
+	
+	@GetMapping("/accessDenied")
+    public String showAccessDeniedPage() {
+        return "accessDenied";
+    }
 }
